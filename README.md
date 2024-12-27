@@ -54,11 +54,6 @@ In this folder you will find a project completed during the program, containing 
 
 ⚠️**Work in progress**⚠️
 
-### 4. **Resources** 📚
-Additional materials, such as external links, references, or personal research related to the course content.
-
-⚠️**Work in progress**⚠️
-
 ---
 
 ## How to Use This Repository 💡
