@@ -154,3 +154,12 @@ Generative models like stable diffusion and OpenAI's GPT series have gained atte
 
 ### Balancing Opportunities and Challenges
 While generative AI has the potential to transform industries, it is crucial to address these challenges responsibly and ethically.
+
+
+## Resources 📚
+**Applications of Generative AI**️
+- [Millions of New Materials Discovered with Deep Learning](https://deepmind.google/discover/blog/millions-of-new-materials-discovered-with-deep-learning/) - Google DeepMind Research
+- [Reinventing the wheel? “FelGAN” inspires new rim designs with AI](https://www.audi-mediacenter.com/en/press-releases/reinventing-the-wheel-felgan-inspires-new-rim-designs-with-ai-15097) - Audi
+- [May the force of text data analysis be with you: Unleashing the power of generative AI for social psychology research](https://www.sciencedirect.com/science/article/pii/S2949882123000063) - Salah, Halbusi, and Abdelfattah (Computers in Human Behavior: Artificial Humans)
+- For a deeper dive into synthetic data techniques, check out Udacity's course on [Small Datasets in Machine Learning](https://www.udacity.com/course/small-data--cd12528).
+
