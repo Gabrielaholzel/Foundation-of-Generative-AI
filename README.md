@@ -11,6 +11,25 @@ The Foundation of Generative AI Nanodegree focuses on:
 - 🌍 Exploring applications of Generative AI in various domains.
 - ⚖️ Understanding ethical implications and best practices.
 
+## Specific Skills
+
+⚙️ **Generative AI Fundamentals**
+
+Generative AI Fluency • Image classification • Transfer learning • Training neural networks • Hugging Face • Parameter-Efficient Fine-Tuning • Prompt Engineering • Deep learning • PyTorch • Foundation Models • Ethical AI
+
+⚙️ **Large Language Models (LLMs) & Text Generation**
+
+Together AI API • Search implementation in Python • NLP transformers • GPT • Selenium • Large Language Models • Data cleaning • Natural language processing • Bert • OpenAI API • Retrieval-Augmented Generation • Transformer neural networks • Prompt Engineering • Pandas • PyTorch • Tokenization • Cosine • API requests • Recurrent neural networks • Attention mechanisms • Text generation • Beautifulsoup • Data quality assessment • Word embeddings • Data scraping
+
+⚙️ **Computer Vision and Generative AI**
+
+Image pre-processing • Transfer learning • Word embeddings • Ethical AI • Diffusion Models • Yolo algorithm • Model evaluation • Text generation • Computer vision fluency • Image classification • Large Language Models • Pandas • Image generation • Training neural networks • Convolutional neural networks • Parameter-Efficient Fine-Tuning • Image segmentation • Computer Vision Transformers • Tokenization • Data quality assessment • Generative adversarial networks
+
+⚙️ **Building Generative AI Solutions**
+
+Vectors • Retrieval-Augmented Generation • OpenAI API • LangChain
+
+
 For more details, visit the official [Udacity Program Page](https://www.udacity.com/course/generative-ai--nd608).
 
 ---
