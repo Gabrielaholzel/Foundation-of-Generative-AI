@@ -478,3 +478,208 @@ model(torch.tensor([3.0,  7.0]))
 
 # tensor([10.1067], grad_fn=<AddBackward0>)
 ```
+
+## Hugging Face
+Hugging Face is a company making waves in the technology world with its amazing tools for understanding and using human language in computers. Hugging Face offers everything from tokenizers, which help computers make sense of text, to a huge variety of ready-to-go language models, and even a treasure trove of data suited for language tasks.
+
+**Tokenizers:**  
+These work like a translator, converting the words we use into smaller parts and creating a secret code that computers can understand and work with.
+
+**Models:** 
+These are like the brain for computers, allowing them to learn and make decisions based on information they've been fed.
+
+**Datasets:**  
+Think of datasets as textbooks for computer models. They are collections of information that models study to learn and improve.
+
+**Trainers:**  
+Trainers are the coaches for computer models. They help these models get better at their tasks by practicing and providing guidance. Hugging Face Trainers implement the PyTorch training loop for you, so you can focus instead on other aspects of working on the model.
+
+### Tokenizers
+HuggingFace tokenizers help us break down text into smaller, manageable pieces called tokens. These tokenizers are easy to use and also remarkably fast due to their use of the Rust programming language.
+
+**Tokenization**
+It's like cutting a sentence into individual pieces, such as words or characters, to make it easier to analyse.
+
+**Tokens** 
+These are the pieces you get after cutting up text during tokenization, kind of like individual Lego blocks that can be words, parts of words, or even single letters. These tokens are converted to numerical values for models to understand.
+
+**Pre-trained Model**  
+This is a ready-made model that has been previously taught with a lot of data.
+
+**Uncased**  
+This means that the model treats uppercase and lowercase letters as the same.
+
+
+#### Code Example
+```python
+from transformers import BertTokenizer 
+
+# Initialize the tokenizer  
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')  
+
+# See how many tokens are in the vocabulary  
+tokenizer.vocab_size 
+# 30522
+```
+
+```python
+# Test the model on 3 + 7  
+# Tokenize the sentence  
+tokens = tokenizer.tokenize("I heart Generative AI")  
+
+# Print the tokens  
+print(tokens)  
+# ['i', 'heart', 'genera', '##tive', 'ai']  
+
+# Show the token ids assigned to each token  
+print(tokenizer.convert_tokens_to_ids(tokens))  
+# [1045, 2540, 11416, 6024, 9932]
+```
+
+### Face Models
+Hugging Face models provide a quick way to get started using models trained by the community. With only a few lines of code, you can load a pre-trained model and start using it on tasks such as sentiment analysis.
+
+#### Code Example
+```python
+from transformers import BertForSequenceClassification, BertTokenizer 
+
+# Load a pre-trained sentiment analysis model  
+model_name =  "textattack/bert-base-uncased-imdb"  
+model = BertForSequenceClassification.from_pretrained(model_name, num_labels=2)  
+
+# Tokenize the input sequence  
+tokenizer = BertTokenizer.from_pretrained(model_name) 
+inputs = tokenizer("I love Generative AI", return_tensors="pt")  
+
+# Make prediction  
+with torch.no_grad():
+	outputs = model(**inputs).logits 
+	probabilities = torch.nn.functional.softmax(outputs, dim=1)  
+	predicted_class = torch.argmax(probabilities)  
+
+# Display sentiment result  
+if predicted_class ==  1:
+	print(f"Sentiment: Positive ({probabilities[0][1]  *  100:.2f}%)")
+else:
+	print(f"Sentiment: Negative ({probabilities[0][0]  *  100:.2f}%)")  
+# Sentiment: Positive (88.68%)
+```
+
+### Datasets
+HuggingFace Datasets library is a powerful tool for managing a variety of data types, like text and images, efficiently and easily. This resource is incredibly fast and doesn't use a lot of computer memory, making it great for handling big projects without any hassle.
+
+**IMDb dataset**  
+A dataset of movie reviews that can be used to train a machine learning model to understand human sentiments.
+
+**Apache Arrow** 
+A software framework that allows for fast data processing.
+
+
+#### Code Example
+```python
+from datasets import load_dataset
+from IPython.display import HTML, display
+
+# Load the IMDB dataset, which contains movie reviews
+# and sentiment labels (positive or negative)
+dataset = load_dataset("imdb")
+
+# Fetch a revie from the training set
+review_number = 42
+sample_review = dataset["train"][review_number]
+
+display(HTML(sample_review["text"][:450] + "..."))
+# WARNING: This review contains SPOILERS. Do not read if you don't want some points revealed to you before you watch the
+# film.
+# 
+# With a cast like this, you wonder whether or not the actors and actresses knew exactly what they were getting into. Did they
+# see the script and say, `Hey, Close Encounters of the Third Kind was such a hit that this one can't fail.' Unfortunately, it does.
+# Did they even think to check on the director's credentials...
+
+if sample_review["label"] == 1:
+    print("Sentiment: Positive")
+else:
+    print("Sentiment: Negative")
+# Sentiment: Negative
+```
+
+
+### Trainers
+Hugging Face trainers offer a simplified approach to training generative AI models, making it easier to set up and run complex machine learning tasks. This tool wraps up the hard parts, like handling data and carrying out the training process, allowing us to focus on the big picture and achieve better outcomes with our AI endeavours.
+
+**Truncating**
+This refers to shortening longer pieces of text to fit a certain size limit.
+
+**Padding**
+Adding extra data to shorter texts to reach a uniform length for processing.
+
+**Batches** 
+Batches are small, evenly divided parts of data that the AI looks at and learns from each step of the way.
+
+**Batch Size**
+The number of data samples that the machine considers in one go during training.
+
+**Epochs**
+A complete pass through the entire training dataset. The more epochs, the more the computer goes over the material to learn.
+
+**Dataset Splits**
+Dividing the dataset into parts for different uses, such as training the model and testing how well it works.
+
+#### Code Example
+```python
+from transformers import (DistilBertForSequenceClassification,
+    DistilBertTokenizer,
+    TrainingArguments,
+    Trainer
+)
+from datasets import load_dataset
+
+model = DistilBertForSequenceClassification.from_pretrained(
+    "distilbert-base-uncased", num_labels=2
+)
+tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
+
+def tokenize_function(examples):
+    return tokenizer(examples["text"], padding="max_length", truncation=True)
+
+
+dataset = load_dataset("imdb")
+tokenized_datasets = dataset.map(tokenize_function, batched=True)
+
+training_args = TrainingArguments(
+    per_device_train_batch_size=64,
+    output_dir="./results",
+    learning_rate=2e-5,
+    num_train_epochs=3,
+)
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=tokenized_datasets["train"],
+    eval_dataset=tokenized_datasets["test"],
+)
+trainer.train()
+
+```
+
+## Pre-Trained Models and Transfer Learning
+
+By using pre-trained models and the magic of transfer learning, the hard work of training an AI model from zero can be bypassed, making it easier and quicker to get the job done. By leveraging the knowledge a model distils from a large dataset, we can reduce the amount of training needed to get a performant model.
+
+Transfer learning is a technique where a model developed for a specific task is reused as the starting point for a model on a second task. This approach leverages the knowledge gained from one problem to improve performance on another, related problem.
+
+**Examples:**
+-   If we wanted to create a plant identification app for mobile devices, we might use  [MobileNetV3(opens in a new tab)](https://paperswithcode.com/method/mobilenetv3)  and train it on a dataset containing photos of different plant species.
+-   If we wanted to create a social networking spam classifier, we might use BERT and train it on a dataset containing samples of spam and not-spam text.
+
+**Benefits**
+* **Reduced Training Time**: Since the model has already learned from a large dataset, it requires less time to adapt to the new task.
+* **Improved Performance**: Models that utilize transfer learning often achieve better accuracy, especially when the new task has limited data.
+
+**How It Works**
+* A pre-trained model is fine-tuned with a smaller, task-specific dataset. This involves updating the model's weights based on the new data while retaining the knowledge from the original training.
+* The final layer of the model may be modified to fit the new task's requirements.
+
+
+**Applications**
+Transfer learning is widely used in various fields, including natural language processing (NLP) and computer vision, where pre-trained models can be adapted for specific tasks like sentiment analysis or image classification.
