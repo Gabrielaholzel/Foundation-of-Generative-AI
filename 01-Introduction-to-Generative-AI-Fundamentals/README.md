@@ -1,5 +1,23 @@
 # Introduction to Generative AI Fundamentals
 
+**Table of Contents**
+- [What Is Generative AI](#what-is-generative-ai)
+  * [Types of Generative AI](#types-of-generative-ai)
+  * [Examples of Generative AI](#examples-of-generative-ai)
+- [Applications of Generative AI](#applications-of-generative-ai)
+- [AI and Machine Learning Timeline](#ai-and-machine-learning-timeline)
+  * [Key Concepts](#key-concepts)
+- [Training Generative AI Models](#training-generative-ai-models)
+  * [Key Concepts](#key-concepts-1)
+- [Generation Algorithms](#generation-algorithms)
+  * [Key Concepts](#key-concepts-2)
+- [More Generative AI Architectures](#more-generative-ai-architectures)
+- [Challenges in Generative AI](#challenges-in-generative-ai)
+  * [Emergence of Generative Models](#emergence-of-generative-models)
+  * [Ethical Concerns](#ethical-concerns)
+  * [Balancing Opportunities and Challenges](#balancing-opportunities-and-challenges)
+
+
 ## What Is Generative AI
 
 Generative AI is an exciting field of artificial intelligence that opens the door to creating new and original content, spanning from written text to stunning visuals and even computer-generated music. It showcases the innovative side of AI by going beyond simple analytical tasks to engage in creative processes.
