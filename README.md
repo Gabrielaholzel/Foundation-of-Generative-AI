@@ -43,11 +43,16 @@ Detailed notes and summaries from the lessons for quick reference.
 
 - [**Introduction to Generative AI Fundamentals:**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/0b940898eb8d7231062d6ccf494ac98313551bbe/01-Introduction-to-Generative-AI-Fundamentals)
 - [**Deep Learning Fundamentals**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/0b940898eb8d7231062d6ccf494ac98313551bbe/02-Deep-Learning-Fundamentals)
+- [**Foundation Models**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/blob/8058e3abc3119909146844ac7438f152614bd19e/03-Foundation-Models/README.md)
+- [**Adapting Foundation Models**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/blob/8058e3abc3119909146844ac7438f152614bd19e/04-Adapting-Foundation-Models/README.md)
 
 ### 2. **Exercises** 🏋️‍♀️
 Contains practice exercises and solutions to coding challenges.
 
-⚠️**Work in progress**⚠️
+- [**Introduction to Generative AI Fundamentals:**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/8058e3abc3119909146844ac7438f152614bd19e/01-Introduction-to-Generative-AI-Fundamentals/Exercises)
+- [**Deep Learning Fundamentals**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/8058e3abc3119909146844ac7438f152614bd19e/02-Deep-Learning-Fundamentals/Exercises)
+- [**Foundation Models**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/8058e3abc3119909146844ac7438f152614bd19e/03-Foundation-Models/Exercises)
+- [**Adapting Foundation Models**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/8058e3abc3119909146844ac7438f152614bd19e/04-Adapting-Foundation-Models/Exercises)
 
 ### 3. **Projects** 🚀
 In this folder you will find a project completed during the program, containing code, datasets, and a project README for detailed explanations.
@@ -73,7 +78,6 @@ Feel free to connect with me if you have any questions, feedback, or collaborati
 
 - **Email:** gabrielaholzel@gmail.com
 - **LinkedIn:** [Gabriela Holzel](https://www.linkedin.com/in/gabrielaholzel/)
-- **GitHub:** [Gabrielaholzel](https://github.com/Gabrielaholzel)
 
 ---
 
