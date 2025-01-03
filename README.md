@@ -1,4 +1,4 @@
-# Foundation of Generative AI Nanodegree 🎓🤖
+# Foundation of Generative AI Nanodegree 🎓
 
 Welcome to my GitHub repository for the **Foundation of Generative AI Nanodegree** program! This program is delivered by **Udacity** and sponsored by **Bertelsmann**, providing an in-depth understanding of the principles and techniques behind Generative AI. Here, you'll find a collection of my projects and notes as I progress through the program.
 
@@ -54,10 +54,6 @@ Contains practice exercises and solutions to coding challenges.
 - [**Foundation Models**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/8058e3abc3119909146844ac7438f152614bd19e/03-Foundation-Models/Exercises)
 - [**Adapting Foundation Models**](https://github.com/Gabrielaholzel/Foundation-of-Generative-AI/tree/8058e3abc3119909146844ac7438f152614bd19e/04-Adapting-Foundation-Models/Exercises)
 
-### 3. **Projects** 🚀
-In this folder you will find a project completed during the program, containing code, datasets, and a project README for detailed explanations.
-
-⚠️**Work in progress**⚠️
 
 ---
 
